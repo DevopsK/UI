@@ -1,0 +1,47 @@
+html,body{
+	height:100%;
+}
+
+#leftSidebar, #contentBar{
+	height: 100%;
+}
+
+#leftSidebar{
+	background-color: red;
+	width: 30%;
+	float:left;
+}
+#contentBar{
+	background-color: green;
+}
+
+.ui.segment{
+	padding: 0;
+	width: 100%;
+}
+
+.ui.menu{
+	width:100%;
+}
+
+
+/*Menu padding bottom*/
+.ui.grid>.row{
+	padding-bottom: 0;
+}
+
+div.ui.grid{
+	height: -webkit-fill-available;
+}
+
+div.ui.label{
+	width:inherit;
+}
+
+.ui.top.attached.label {
+    text-align: center;
+}
+
+.ui.vertical.menu .item{
+	padding-left: 15%;
+}
