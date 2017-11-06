@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Grid,Menu,Segment,Label} from 'semantic-ui-react';
+import {Grid,Menu,Segment} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import DashboardDropdown from './DashboardDropdown';
 import '../../../styles/grid.css';
@@ -18,13 +18,16 @@ class SideMenu extends Component{
 	{/*pages*/}
 	<Grid>
 		<Segment basic>
-			<Label name='Tools' attached='top'>Tools</Label>
 			<Menu vertical fluid inverted>
 				<Menu.Item as={Link} to='/Dashboard' 
 					name='Dashboard' 
 					active ={activeItem === 'Dashboard'} 
-					onClick={this.handleItemClick}/>
-				<DashboardDropdown></DashboardDropdown>	
+					onClick={this.handleItemClick} />
+
+					<Menu.Item>
+					<DashboardDropdown></DashboardDropdown>	
+					</Menu.Item>
+				{/*
 				<Menu.Item as={Link} to='/Jenkins'
 					name='Jenkins'  
 					active ={activeItem === 'Jenkins'} 
@@ -40,6 +43,7 @@ class SideMenu extends Component{
 				<Menu.Item name='Puppet' active ={activeItem === 'Puppet'} onClick={this.handleItemClick}/>
 				<Menu.Item name='Manual' active ={activeItem === 'Manual'} onClick={this.handleItemClick}/>
 				<Menu.Item name='Migration' active ={activeItem === 'Migration'} onClick={this.handleItemClick}/>
+				*/}
 			</Menu>	
 		</Segment>
 	</Grid>

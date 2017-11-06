@@ -1,17 +1,45 @@
-import React, {Component} from 'react';
-import {Dropdown} from 'semantic-ui-react';
+import React from 'react';
+import {Dropdown,Input} from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 
-const DashboardDropdown = () => (
-	<Dropdown text='Tools' pointing='left' className='link item'>
-      <Dropdown.Menu>
-        <Dropdown.Item>GitHub</Dropdown.Item>
-        <Dropdown.Item>Docker</Dropdown.Item>
-        <Dropdown.Item>Jenkins</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item>SCM</Dropdown.Item>
-        <Dropdown.Item>uDeploy</Dropdown.Item>
+
+
+const DashboardDropdown = () => {
+  const tagOptions = [
+  {
+    text:'Jenkins',
+    value:'Jenkins'
+    //label:{color:'red', empty:'true', circular:'true'}
+  },
+  {
+    text:'GitHub',
+    value:'GitHub'
+  },
+  {
+    text:'JIRA',
+    value:'Jiira'
+  },
+  {
+    text:'Artifactory',
+    value:'Artifactory'
+  },
+  {
+    text:'uDeploy',
+    value:'uDeploy'
+  },
+
+];
+  return(
+   <Dropdown text='Tools' floating className='Link Item Icon'>
+    <Dropdown.Menu>
+      {/*<Input icon='search' iconPosition='left' className='search' />*/}
+      <Dropdown.Menu scrolling>
+        {tagOptions.map(option => <Dropdown.Item as={Link} to={option.text}
+                                      key={option.value} {...option} />)}
       </Dropdown.Menu>
-    </Dropdown>
+    </Dropdown.Menu>
+  </Dropdown>
 )
+}
 
 export default DashboardDropdown;

@@ -45,3 +45,8 @@ div.ui.label{
 .ui.vertical.menu .item{
 	padding-left: 15%;
 }
+
+/*TopMenu Item Color*/
+.ui.small.header{
+	color: white;
+}
